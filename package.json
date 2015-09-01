@@ -1,5 +1,5 @@
 {
-  "name": "shopper",
+  "name": "shopper-gap",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -19,12 +19,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sa-lo-mon/shopper.git"
+    "url": "git+https://github.com/sa-lo-mon/shopper-gap.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sa-lo-mon/shopper/issues"
+    "url": "https://github.com/sa-lo-mon/shopper-gap/issues"
   },
-  "homepage": "https://github.com/sa-lo-mon/shopper#readme"
+  "homepage": "https://github.com/sa-lo-mon/shopper-gap#readme"
 }
