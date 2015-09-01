@@ -3,4 +3,6 @@
 /www/spec
 /www/res
 /platforms
+/hooks
+/plugins
 /node_modules
