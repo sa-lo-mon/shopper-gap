@@ -53,6 +53,7 @@ app.post('/register/complete', function (req, res) {
         "city": req.body.city,
         "gender": req.body.gender
     };
+
     facebookToDB.checkUser(userDocument, function (err, data) {
         if (err) {
             res.send('check user - error!!');

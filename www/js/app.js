@@ -65,7 +65,7 @@ app.run(['$rootScope', '$window', 'userService', function ($rootScope, $window, 
 
         FB.init({
             appId: '421262201393188',
-            channelUrl: 'app/channel.html',
+            channelUrl: '/www/channel.html',
             status: true,
             cookie: true,
             xfbml: true
