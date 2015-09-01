@@ -1,0 +1,17 @@
+<fb:login-button scope="public_profile,email" auto_logout_link="true"></fb:login-button>
+<div ng-controller="LoginCtrl" ng-model="user">
+    <span></span>
+    <div ng-switch on="user.isLoggedIn">
+        <div id="logout" ng-switch-when="true">
+            <button ng-click="logout()">Logout</button>
+        </div>
+        <div id="login" ng-switch-when="false">
+            <form ng-submit="sub()">
+                Email: <input type="text" ng-model="formData.email" placeholder="Enter email"/><br/>
+                Password: <input type="password" ng-model="formData.password" placeholder="Enter password"/>
+                <input type="submit" value="Submit"/>
+            </form>
+            <a href="#/register">sign up</a>
+        </div>
+    </div>
+</div>
