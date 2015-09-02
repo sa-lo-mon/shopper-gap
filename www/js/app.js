@@ -9,8 +9,13 @@ app.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.interceptors.push(function ($q) {
         return {
             'request': function (config) {
-                config.url = 'https://shopper-server.herokuapp.com' + config.url;
-                console.log('config url: ', config.url);
+                var url = config.url;
+
+                if (!url.contains('.html')) {
+                    config.url = 'https://shopper-server.herokuapp.com' + config.url;
+                    console.log('config url: ', config.url);
+                }
+
                 return config || $q.when(config);
             }
         }
@@ -20,39 +25,39 @@ app.config(['$httpProvider', function ($httpProvider) {
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/login', {
-            templateUrl: '/views/login.html',
+            templateUrl: 'views/login.html',
             controller: 'LoginCtrl'
         })
         .when('/logout', {
-            templateUrl: '/views/login.html',
+            templateUrl: 'views/login.html',
             controller: 'LoginCtrl'
         })
         .when('/register', {
-            templateUrl: '/views/register.html',
+            templateUrl: 'views/register.html',
             controller: 'RegisterCompleteCtrl'
         })
         .when('/categories', {
-            templateUrl: '/views/categories.html',
+            templateUrl: 'views/categories.html',
             controller: 'RegisterCompleteCtrl'
         })
         .when('/main', {
-            templateUrl: '/views/main.html',
+            templateUrl: 'views/main.html',
             controller: 'MainCtrl'
         })
         .when('/sales/general', {
-            templateUrl: '/views/sales.html',
+            templateUrl: 'views/sales.html',
             controller: 'SalesCtrl'
         })
         .when('/sales/private', {
-            templateUrl: '/views/sales.html',
+            templateUrl: 'views/sales.html',
             controller: 'SalesCtrl'
         })
         .when('/mall/map', {
-            templateUrl: '/views/mall.html',
+            templateUrl: 'views/mall.html',
             controller: 'MallCtrl'
         })
         .when('/account', {
-            templateUrl: '/views/account.html',
+            templateUrl: 'views/account.html',
             controller: 'AccountCtrl'
         })
         .otherwise({redirectTo: '/'});
@@ -65,7 +70,7 @@ app.run(['$rootScope', '$window', 'userService', function ($rootScope, $window, 
 
         FB.init({
             appId: '421262201393188',
-            channelUrl: '/www/channel.html',
+            channelUrl: 'www/channel.html',
             status: true,
             cookie: true,
             xfbml: true

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
 <head>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no"/>
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/app.css">
 </head>
 <body>
+<div ng-model="model">
 <ul class="main" ng-model="user">
     <li><a ng-href="{{user.isLoggedIn ? '#/logout': '#/login'}}">{{user.isLoggedIn ? 'Logout':'Login'}}</a>
     </li>
@@ -25,7 +26,7 @@
     <li><a href="#/mall/map">Mall Map</a></li>
     <li><a href="#/account">Account</a></li>
 </ul>
-
+</div>
 <div class="container">
     <div ng-view></div>
 </div>
