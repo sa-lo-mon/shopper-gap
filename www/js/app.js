@@ -11,7 +11,8 @@ app.config(['$httpProvider', function ($httpProvider) {
             'request': function (config) {
                 var url = config.url;
 
-                if (!url.contains('.html')) {
+                //if url doesn't contains '.html'
+                if (url.indexOf('.html') == -1) {
                     config.url = 'https://shopper-server.herokuapp.com' + config.url;
                     console.log('config url: ', config.url);
                 }
